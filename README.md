@@ -13,6 +13,7 @@ Flash it from the browser (Chrome or Edge): open the GitHub Pages site of this r
 
 - **normal**: for boards that are already set up (keeps saved settings unless "Erase device" is ticked)
 - **setup**: for new boards; enter Wi-Fi and the Thread dataset in the serial console, then install normal
+- **ethernet**: like normal, but connects by LAN cable via Espressif's Ethernet sub-board (W5500)
 
 `esp-ot-br-*-full-0x0.bin` are combined images for flashing at address 0x0 with other tools
 (they overwrite saved settings).
