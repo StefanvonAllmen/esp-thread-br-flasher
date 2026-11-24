@@ -1,6 +1,6 @@
 {
     "name":  "ESP Thread Border Router (setup)",
-    "version":  "2026-11-24 23:25",
+    "version":  "2026-11-24 23:45",
     "new_install_prompt_erase":  true,
     "builds":  [
                    {

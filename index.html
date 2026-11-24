@@ -41,6 +41,13 @@
     <esp-web-install-button manifest="manifest-setup.json"></esp-web-install-button>
   </div>
 
+  <div class="card">
+    <h2>Ethernet firmware (LAN sub-board)</h2>
+    <p>For boards with Espressif's Ethernet sub-board (W5500) plugged in: connects by LAN cable instead of
+       Wi-Fi. Otherwise like the normal firmware (auto-start, up to 64 child devices). Keeps saved settings.</p>
+    <esp-web-install-button manifest="manifest-ethernet.json"></esp-web-install-button>
+  </div>
+
   <div class="warn">Do not tick "Erase device" for a board that is already set up: it deletes its saved
     Wi-Fi and Thread settings. On a new board erasing is fine.</div>
 
@@ -56,6 +63,8 @@
         after ~30 s <code>ot state</code> must say router or child.</li>
       <li>Install the <b>normal</b> firmware.</li>
     </ol>
+    <p>With the Ethernet sub-board: same steps, but skip the Wi-Fi command and install the
+       <b>Ethernet</b> firmware at the end (connect the LAN cable).</p>
   </div>
 </main>
 </body>

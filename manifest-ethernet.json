@@ -1,0 +1,36 @@
+{
+    "name":  "ESP Thread Border Router (ethernet)",
+    "version":  "2026-11-24 23:45",
+    "new_install_prompt_erase":  true,
+    "builds":  [
+                   {
+                       "chipFamily":  "ESP32-S3",
+                       "parts":  [
+                                     {
+                                         "path":  "ethernet/bootloader.bin",
+                                         "offset":  0
+                                     },
+                                     {
+                                         "path":  "ethernet/esp_ot_br.bin",
+                                         "offset":  131072
+                                     },
+                                     {
+                                         "path":  "ethernet/partition-table.bin",
+                                         "offset":  32768
+                                     },
+                                     {
+                                         "path":  "ethernet/ota_data_initial.bin",
+                                         "offset":  61440
+                                     },
+                                     {
+                                         "path":  "ethernet/rcp_fw.bin",
+                                         "offset":  4530176
+                                     },
+                                     {
+                                         "path":  "ethernet/web_storage.bin",
+                                         "offset":  4325376
+                                     }
+                                 ]
+                   }
+               ]
+}
