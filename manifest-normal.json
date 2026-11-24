@@ -1,0 +1,36 @@
+{
+    "name":  "ESP Thread Border Router (normal)",
+    "version":  "2026-11-24 23:25",
+    "new_install_prompt_erase":  true,
+    "builds":  [
+                   {
+                       "chipFamily":  "ESP32-S3",
+                       "parts":  [
+                                     {
+                                         "path":  "normal/bootloader.bin",
+                                         "offset":  0
+                                     },
+                                     {
+                                         "path":  "normal/esp_ot_br.bin",
+                                         "offset":  131072
+                                     },
+                                     {
+                                         "path":  "normal/partition-table.bin",
+                                         "offset":  32768
+                                     },
+                                     {
+                                         "path":  "normal/ota_data_initial.bin",
+                                         "offset":  61440
+                                     },
+                                     {
+                                         "path":  "normal/rcp_fw.bin",
+                                         "offset":  4530176
+                                     },
+                                     {
+                                         "path":  "normal/web_storage.bin",
+                                         "offset":  4325376
+                                     }
+                                 ]
+                   }
+               ]
+}

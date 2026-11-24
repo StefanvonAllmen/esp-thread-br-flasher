@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thread Border Router Flasher</title>
+<script type="module" src="https://unpkg.com/esp-web-tools@10.0.1/dist/web/install-button.js?module"></script>
+<style>
+  :root { --bg: #f7f7f5; --fg: #1d1d1b; --muted: #5d5d58; --card: #ffffff; --line: #deded8; --warn: #8a4b00; --warnbg: #fff4e0; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1a1a19; --fg: #ececea; --muted: #a5a59f; --card: #242423; --line: #3a3a38; --warn: #ffc46b; --warnbg: #3a2c14; }
+  }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.5 system-ui, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 24px 16px 48px; }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; }
+  p.sub { color: var(--muted); margin: 0 0 24px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 20px; margin-bottom: 16px; }
+  .card h2 { font-size: 1.1rem; margin: 0 0 6px; }
+  .card p { margin: 0 0 12px; color: var(--muted); }
+  .warn { background: var(--warnbg); color: var(--warn); border-radius: 8px; padding: 10px 14px; margin: 16px 0; }
+  code { font-size: 0.92em; }
+  ol { padding-left: 20px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>ESP Thread Border Router</h1>
+  <p class="sub">ESP32-S3 + ESP32-H2 board. Use Chrome or Edge, connect the board via its ESP32-S3 USB port.</p>
+
+  <div class="card">
+    <h2>Normal firmware</h2>
+    <p>For boards that are already set up (Wi-Fi and Thread saved). Updates the firmware and keeps the settings.
+       Auto-start, Wi-Fi retries forever, up to 64 child devices.</p>
+    <esp-web-install-button manifest="manifest-normal.json"></esp-web-install-button>
+  </div>
+
+  <div class="card">
+    <h2>Setup firmware</h2>
+    <p>For a new board: manual start, so Wi-Fi and the Thread dataset can be entered in the serial console.
+       Afterwards install the normal firmware.</p>
+    <esp-web-install-button manifest="manifest-setup.json"></esp-web-install-button>
+  </div>
+
+  <div class="warn">Do not tick "Erase device" for a board that is already set up: it deletes its saved
+    Wi-Fi and Thread settings. On a new board erasing is fine.</div>
+
+  <div class="card">
+    <h2>New board, step by step</h2>
+    <ol>
+      <li>Install the <b>setup</b> firmware.</li>
+      <li>Open a serial console (115200 baud) and enter:<br>
+        <code>ot wifi connect -s &lt;wifi name&gt; -p &lt;password&gt;</code><br>
+        <code>ot dataset set active &lt;dataset from Home Assistant&gt;</code><br>
+        <code>ot ifconfig up</code><br>
+        <code>ot thread start</code><br>
+        after ~30 s <code>ot state</code> must say router or child.</li>
+      <li>Install the <b>normal</b> firmware.</li>
+    </ol>
+  </div>
+</main>
+</body>
+</html>
