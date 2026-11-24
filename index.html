@@ -6,9 +6,9 @@
 <title>Thread Border Router Flasher</title>
 <script type="module" src="https://unpkg.com/esp-web-tools@10.0.1/dist/web/install-button.js?module"></script>
 <style>
-  :root { --bg: #f7f7f5; --fg: #1d1d1b; --muted: #5d5d58; --card: #ffffff; --line: #deded8; --warn: #8a4b00; --warnbg: #fff4e0; }
+  :root { --bg: #f7f7f5; --fg: #1d1d1b; --muted: #5d5d58; --card: #ffffff; --line: #deded8; --warn: #8a4b00; --warnbg: #fff4e0; --claude: #9a3f1e; --claudebg: #fbeee7; }
   @media (prefers-color-scheme: dark) {
-    :root { --bg: #1a1a19; --fg: #ececea; --muted: #a5a59f; --card: #242423; --line: #3a3a38; --warn: #ffc46b; --warnbg: #3a2c14; }
+    :root { --bg: #1a1a19; --fg: #ececea; --muted: #a5a59f; --card: #242423; --line: #3a3a38; --warn: #ffc46b; --warnbg: #3a2c14; --claude: #f0a585; --claudebg: #3a231a; }
   }
   body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.5 system-ui, sans-serif; }
   main { max-width: 720px; margin: 0 auto; padding: 24px 16px 48px; }
@@ -19,11 +19,21 @@
   .card p { margin: 0 0 12px; color: var(--muted); }
   .warn { background: var(--warnbg); color: var(--warn); border-radius: 8px; padding: 10px 14px; margin: 16px 0; }
   code { font-size: 0.92em; }
+  .made-by { background: var(--claudebg); color: var(--claude); border: 1px solid var(--claude); border-radius: 10px;
+             padding: 12px 16px; margin: 0 0 24px; font-size: 0.95rem; }
+  .made-by strong { font-size: 1.05rem; }
+  footer { color: var(--muted); font-size: 0.85rem; margin-top: 32px; text-align: center; }
   ol { padding-left: 20px; }
 </style>
 </head>
 <body>
 <main>
+  <div class="made-by">
+    <strong>Made by Claude</strong>: this page, the firmware build and its changes were created by Claude,
+    an AI assistant from Anthropic, working on the owner's PC. Unofficial: not made or endorsed by
+    Espressif or Anthropic. Use at your own risk.
+  </div>
+
   <h1>ESP Thread Border Router</h1>
   <p class="sub">ESP32-S3 + ESP32-H2 board. Use Chrome or Edge, connect the board via its ESP32-S3 USB port.</p>
 
@@ -66,6 +76,8 @@
     <p>With the Ethernet sub-board: same steps, but skip the Wi-Fi command and install the
        <b>Ethernet</b> firmware at the end (connect the LAN cable).</p>
   </div>
+  <footer>Built with Claude (Anthropic). Based on Espressif's open-source
+    <a href="https://github.com/espressif/esp-thread-br">esp-thread-br</a> and ESP-IDF.</footer>
 </main>
 </body>
 </html>

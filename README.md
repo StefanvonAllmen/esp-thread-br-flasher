@@ -1,5 +1,10 @@
 # ESP Thread Border Router – browser flasher
 
+> **Made by Claude.** This repository, its web page, the firmware build and the
+> firmware changes were created by Claude, an AI assistant from Anthropic, working
+> on the owner's PC. Unofficial: not made or endorsed by Espressif or Anthropic.
+> Use at your own risk.
+
 Firmware for the Espressif ESP Thread Border Router board (ESP32-S3 + ESP32-H2),
 built from [esp-thread-br](https://github.com/espressif/esp-thread-br)
 (`basic_thread_border_router`, ESP-IDF v5.5.6) with local changes:
